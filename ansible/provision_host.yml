@@ -1,0 +1,10 @@
+---
+# Prepare host for for key auth
+
+- name: prepare host
+  hosts: all
+  become: true  
+  gather_facts: false  
+  roles:
+    - keyauth
+    - common

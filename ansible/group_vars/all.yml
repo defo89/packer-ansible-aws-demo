@@ -1,0 +1,5 @@
+---
+ansuser_name: manager
+ansuser_comment: "Management User"
+ansuser_group: wheel
+jumpbox_sshkey: files/id_rsa.pub
