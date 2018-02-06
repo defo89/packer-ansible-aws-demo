@@ -1,5 +1,5 @@
 ---
-# Prepare host for for key auth
+# Prepare host
 
 - name: prepare host
   hosts: all
