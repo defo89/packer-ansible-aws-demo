@@ -43,19 +43,18 @@ Your public key has been saved in keys/id_rsa.pub.
 
 **Set desired AWS credentials**
 
-In this example I am using environment variable **AWS_PROFILE** to set the desired profile.
+In this example I am using [**aws-vault**](https://github.com/99designs/aws-vault) to work with desired profile.
 
 Other options to set [AWS credentials for Packer](https://www.packer.io/docs/builders/amazon.html).
 
 ```
-❯ cat ~/.aws/credentials
-[lab]
-aws_access_key_id = your-aws-access-key-id
-aws_secret_access_key = your-aws-access-key
+❯ aws-vault add home
+Enter Access Key ID: your-aws-access-key-id
+Enter Secret Access Key: your-aws-access-key+
+Added credentials to profile "home" in vault
 
-❯ export AWS_PROFILE=lab
-❯ env | grep AWS
-AWS_PROFILE=lab
+# launches subshell with desired AWS environment variables
+❯ aws-vault --debug exec -- home
 ```
 
 **Validate and Build with Packer**
